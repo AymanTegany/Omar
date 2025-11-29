@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منصة التعليم</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  /* ===== إعدادات عامة ===== */
+  body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+  }
+
+  main {
+    flex-grow: 1;
+    padding: 20px;
+  }
+
+  h1, h2, p {
+    margin: 0;
+  }
+
+  /* ===== الهيدر ===== */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+  }
+
+  .logo img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .nav-icons i {
+    font-size: 28px;
+    cursor: pointer;
+    color: #0f87d6;
+  }
+
+  /* صندوق الإشعارات وقائمة الشخص */
+  .notif-box, .profile-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #fff;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .notif-box.active, .profile-menu.active {
+    display: block;
+  }
+
+  /* ===== كورسات الصفحة الرئيسية ===== */
+  .courses-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .course-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+  }
+
+  .course-card button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0f87d6;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+  }
+
+  .course-card button:hover {
+    background-color: #0c6cb3;
+  }
+
+  /* ===== محتوى الكورس ===== */
+/* محتوى الكورس مع تأثير السلاسة */
+.course-content {
+  display: none; /* يختفي مبدئياً */
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  opacity: 0;
+  transition: opacity 0.8s ease; /* تأثير سلس */
+}
+
+.course-content.show {
+  display: block; /* يصبح ظاهر */
+  opacity: 1;     /* يظهر تدريجياً */
+}
+
+
+  .course-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff6b6b;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+  }
+
+  .course-content button:hover {
+    background-color: #e03e3e;
+  }
+
+  /* شاشة التحميل */
+  #loading {
+    display: none;
+    text-align: center;
+    margin: 50px auto;
+  }
+
+  .loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #0f87d6;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  #loading p {
+    font-weight: bold;
+    color: #0f87d6;
+    font-size: 16px;
+  }
+
+  /* ===== الفوتر ===== */
+  footer {
+    background-color: #334155;
+    padding: 30px 20px;
+    text-align: center;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .social-icons a {
+    color: #0ea5e9;
+    font-size: 36px;
+    text-decoration: none;
+    transition: 0.4s;
+  }
+
+  .social-icons a:hover {
+    color: #38bdf8;
+    transform: scale(1.2) rotate(5deg);
+    text-shadow: 0 0 15px rgba(56,189,248,0.8);
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- ===== المحتوى الرئيسي ===== -->
+  <main id="main-content">
+    <h1 style="text-align:center; margin-bottom: 30px;">كورسات الشهر</h1>
+    <div class="courses-container">
+      <div class="course-card">
+        <h2>كورس الشهر الأول</h2>
+        <button onclick="openCourse('course1')">دخول الكورس</button>
+      </div>
+      <div class="course-card">
+        <h2>كورس الشهر الثاني</h2>
+        <button onclick="openCourse('course2')">دخول الكورس</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== شاشة التحميل ===== -->
+  <div id="loading" style="display:none; text-align:center; margin-top:50px;">
+    <div class="loader"></div>
+    <p>يتم تحميل بيانات الكورس...</p>
+  </div>
+
+  <!-- ===== محتوى الكورسات ===== -->
+  <div id="course1" class="course-content">
+    <h2>كورس الشهر الأول</h2>
+    <p>المحاضرة الأولى - قراءة - 3ث</p>
+    <p>المحاضرة الثانية - أدب - 3ث</p>
+    <p>المحاضرة الثالثة - قصة - 3ث</p>
+    <p>المحاضرة الرابعة - نصوص - 3ث</p>
+    <button onclick="goBack()">رجوع للكورسات</button>
+  </div>
+
+  <div id="course2" class="course-content">
+    <h2>كورس الشهر الثاني</h2>
+    <p>المحاضرة الأولى - نحو - 3ث</p>
+    <p>المحاضرة الثانية - نحو - 3ث</p>
+    <p>المحاضرة الثالثة - نحو - 3ث</p>
+    <p>المحاضرة الرابعة - بلاغة - 3ث</p>
+    <button onclick="goBack()">رجوع للكورسات</button>
+  </div>
+
+  <!-- ===== CSS مؤقت داخل الصفحة ===== -->
+  <style>
+    #loading { display:none; }
+    .course-content {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .course-content.show {
+      opacity: 1;
+    }
+
+    .loader {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #0f87d6;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 10px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    #loading p {
+      font-weight: bold;
+      color: #0f87d6;
+      font-size: 16px;
+    }
+  </style>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    function openCourse(courseId) {
+      document.getElementById('main-content').style.display = 'none';
+      const loading = document.getElementById('loading');
+      loading.style.display = 'block';
+
+      setTimeout(() => {
+        loading.style.display = 'none';
+        const course = document.getElementById(courseId);
+        course.style.display = 'block';
+        setTimeout(() => course.classList.add('show'), 50); // fade-in effect
+      }, 1000); // بعد ثانيتين
+    }
+
+    function goBack() {
+      document.querySelectorAll('.course-content').forEach(c => {
+        c.classList.remove('show');
+        c.style.display = 'none';
+      });
+      document.getElementById('main-content').style.display = 'block';
+    }
+  </script>
+
+</body>
+
+</html>

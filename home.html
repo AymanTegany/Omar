@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تعلم - الصفحة الرئيسية</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+
+<body>
+
+  <!--=====================================================
+===================== (Navbar) ==========================
+=========================================================-->
+
+  <header class="navbar">
+
+
+    <div class="nav-icons">
+      <div class="profile"></div>
+      <div class="profile-menu">
+        <!-- قائمة العناصر الجانبية -->
+        <ul class="icons-janebia">
+          <li><i class="fa-solid fa-house"></i><a href="home.html">الصفحة الرئيسية</a></li>
+          <li><i class="fa-regular fa-user"></i><a href="profile.html">الملف الشخصي</a></li>
+          <li><i class="fa-solid fa-wallet"></i><a href="#">المحفظة الالكترونية</a></li>
+          <li><i class="fa-solid fa-book-open-reader"></i><a href="#">دوراتي</a></li>
+          <li><i class="fa-solid fa-book"></i><a href="#">الدورات التعليمية</a></li>
+          <li><i class="fa-solid fa-award"></i><a href="#">نتائج الامتحانات</a></li>
+          <li><i class="fa-solid fa-right-from-bracket logout-icon"></i><a href="login.html">تسجيل الخروج</a></li>
+
+        </ul>
+      </div>
+
+      <div class="notification"></div>
+      <div class="wallet-box">
+        <div class="wallet-icon">
+          <div class="wallet"></div>
+        </div>
+        <span class="wallet-amount">2000</span>
+        <span class="currency">جنيه</span>
+      </div>
+      <div class="">
+        <div class="notif-box">
+          <p>لا توجد لديك إشعارات</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- زرار الدارك مود -->
+    <label id="theme-toggle-button">
+      <input type="checkbox" id="toggle">
+      <svg viewBox="0 0 69.667 44" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+
+
+        <g filter="url(#container)" transform="matrix(1, 0, 0, 1, -3.5, -3.5)">
+          <rect fill="#83cbd8" transform="translate(3.5 3.5)" rx="17.5" height="35" width="60.667" data-name="container"
+            id="container"></rect>
+        </g>
+
+        <g transform="translate(2.333 2.333)" id="button">
+
+          <g data-name="sun" id="sun">
+            <g filter="url(#sun-outer)" transform="matrix(1, 0, 0, 1, -5.83, -5.83)">
+              <circle fill="#f8e664" transform="translate(5.83 5.83)" r="15.167" cy="15.167" cx="15.167"
+                data-name="sun-outer" id="sun-outer-2"></circle>
+            </g>
+            <g filter="url(#sun)" transform="matrix(1, 0, 0, 1, -5.83, -5.83)">
+              <path fill="rgba(246,254,247,0.29)" transform="translate(9.33 9.33)"
+                d="M11.667,0A11.667,11.667,0,1,1,0,11.667,11.667,11.667,0,0,1,11.667,0Z" data-name="sun" id="sun-3">
+              </path>
+            </g>
+            <circle fill="#fcf4b9" transform="translate(8.167 8.167)" r="7" cy="7" cx="7" id="sun-inner"></circle>
+          </g>
+
+          <!-- القمر-->
+          <g data-name="moon" id="moon">
+            <g filter="url(#moon)" transform="matrix(1, 0, 0, 1, -31.5, -5.83)">
+              <circle fill="#cce6ee" transform="translate(31.5 5.83)" r="15.167" cy="15.167" cx="15.167"
+                data-name="moon" id="moon-3"></circle>
+            </g>
+            <g fill="#a6cad0" transform="translate(-24.415 -1.009)" id="patches">
+              <circle transform="translate(43.009 4.496)" r="2" cy="2" cx="2"></circle>
+              <circle transform="translate(39.366 17.952)" r="2" cy="2" cx="2" data-name="patch"></circle>
+              <circle transform="translate(33.016 8.044)" r="1" cy="1" cx="1" data-name="patch"></circle>
+              <circle transform="translate(51.081 18.888)" r="1" cy="1" cx="1" data-name="patch"></circle>
+              <circle transform="translate(33.016 22.503)" r="1" cy="1" cx="1" data-name="patch"></circle>
+              <circle transform="translate(50.081 10.53)" r="1.5" cy="1.5" cx="1.5" data-name="patch"></circle>
+            </g>
+          </g>
+        </g>
+
+        <!-- السحابة-->
+        <g filter="url(#cloud)" transform="matrix(1, 0, 0, 1, -3.5, -3.5)">
+          <path fill="#fff" transform="translate(-3466.47 -160.94)"
+            d="M3512.81,173.815a4.463,4.463,0,0,1,2.243.62.95.95,0,0,1,.72-1.281,4.852,4.852,0,0,1,2.623.519c.034.02-.5-1.968.281-2.716a2.117,2.117,0,0,1,2.829-.274,1.821,1.821,0,0,1,.854,1.858c.063.037,2.594-.049,3.285,1.273s-.865,2.544-.807,2.626a12.192,12.192,0,0,1,2.278.892c.553.448,1.106,1.992-1.62,2.927a7.742,7.742,0,0,1-3.762-.3c-1.28-.49-1.181-2.65-1.137-2.624s-1.417,2.2-2.623,2.2a4.172,4.172,0,0,1-2.394-1.206,3.825,3.825,0,0,1-2.771.774c-3.429-.46-2.333-3.267-2.2-3.55A3.721,3.721,0,0,1,3512.81,173.815Z"
+            data-name="cloud" id="cloud"></path>
+        </g>
+
+        <!-- النجوم-->
+        <g fill="#def8ff" transform="translate(3.585 1.325)" id="stars">
+          <path transform="matrix(-1, 0.017, -0.017, -1, 24.231, 3.055)"
+            d="M.774,0,.566.559,0,.539.458.933.25,1.492l.485-.361.458.394L1.024.953,1.509.592.943.572Z"></path>
+          <path transform="matrix(-0.777, 0.629, -0.629, -0.777, 23.185, 12.358)"
+            d="M1.341.529.836.472.736,0,.505.46,0,.4.4.729l-.2301.46L.605.932l.4.326L.9.786Z" data-name="star"></path>
+          <path transform="matrix(0.438, 0.899, -0.899, 0.438, 23.177, 29.735)"
+            d="M.015,1.065.475.9l.285.365L.766.772l.46-.164L.745.494.751,0,.481.407,0,.293.285.658Z" data-name="star">
+          </path>
+          <path transform="translate(12.677 0.388) rotate(104)"
+            d="M1.161,1.6,1.059,1,1.574.722.962.607.86,0,.613.572,0,.457.446.881.2,1.454l.516-.274Z" data-name="star">
+          </path>
+          <path transform="matrix(-0.07, 0.998, -0.998, -0.07, 11.066, 15.457)"
+            d="M.873,1.648l.114-.62L1.579.945,1.03.62,1.144,0,.706.464.157.139.438.7,0,1.167l.592-.083Z"
+            data-name="star"></path>
+          <path transform="translate(8.326 28.061) rotate(11)"
+            d="M.593,0,.638.724,0,.982l.7.211.045.724.36-.64.7.211L1.342.935,1.7.294,1.063.552Z" data-name="star">
+          </path>
+          <path transform="translate(5.012 5.962) rotate(172)"
+            d="M.816,0,.5.455,0,.311.323.767l-.312.455.516-.215.323.456L.827.911,1.343.7.839.552Z" data-name="star">
+          </path>
+          <path transform="translate(2.218 14.616) rotate(169)"
+            d="M1.261,0,.774.571.114.3.487.967,0,1.538.728,1.32l.372.662.047-.749.728-.218L1.215.749Z" data-name="star">
+          </path>
+        </g>
+      </svg>
+    </label>
+
+
+    <div class="logo">
+
+      <a href="home.html">
+        <img src="image/logo.png" alt="شعار المنصة">
+      </a>
+
+    </div>
+
+
+
+    <!-- خط التقدم -->
+    <div class="scroll-line">
+      <div class="scroll-bar"></div>
+    </div>
+
+  </header>
+
+  <script>
+
+    const profile = document.querySelector('.profile');
+    const profileMenu = document.querySelector('.profile-menu');
+
+    const notification = document.querySelector('.notification');
+    const notifBox = document.querySelector('.notif-box');
+
+    // قائمة الشخص
+    profile.addEventListener('click', (e) => {
+      e.stopPropagation();
+      profileMenu.classList.toggle('active');
+      notifBox.classList.remove('active');
+    });
+
+    // الإشعارات
+    notification.addEventListener('click', (e) => {
+      e.stopPropagation();
+      notifBox.classList.toggle('active');
+      profileMenu.classList.remove('active');
+    });
+
+    // إغلاق أي قائمة عند الضغط خارجها
+    document.addEventListener('click', () => {
+      profileMenu.classList.remove('active');
+      notifBox.classList.remove('active');
+    });
+
+
+    /* ========= DARK MODE ========= */
+
+    const toggle = document.getElementById("toggle");
+
+    // لو الوضع محفوظ دارك
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+      toggle.checked = true; // نخلي الزر معمول عليه علامة
+    }
+
+    // عند تغيير الزر
+    toggle.addEventListener("change", () => {
+      document.body.classList.toggle("dark");
+
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    });
+
+  </script>
+
+  <script>
+
+    const scrollBar = document.querySelector(".scroll-bar");
+    const scrollLine = document.querySelector(".scroll-line");
+
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+      // التحكم في ظهور الخط بعد السكرول
+      if (scrollTop > 10) { // لما المستخدم يبدأ يعمل سكرول
+        scrollLine.style.opacity = 1;
+      } else {
+        scrollLine.style.opacity = 0; // أول الصفحة يختفي
+      }
+
+      // التقدم في الشريط
+      const startOffset = 50;
+      const effectiveScroll = Math.max(0, scrollTop - startOffset);
+      const effectiveHeight = docHeight - startOffset;
+
+      const scrollPercent = (effectiveScroll / effectiveHeight) * 100;
+      scrollBar.style.width = Math.min(scrollPercent, 100) + "%";
+    });
+
+
+
+  </script>
+
+  <!--=====================================================
+===================== نهاية الشريط العلوي (Navbar) =====
+=========================================================-->
+
+  <!-- نافذة نجاح تسجيل الدخول -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <div class="circle">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h2>تم تسجيل الدخول بنجاح !</h2>
+      <p>اضغط حسناً للإستمرار</p>
+      <button id="closeModal">حسناً</button>
+    </div>
+  </div>
+
+  <body>
+
+  </body>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      if (localStorage.getItem("loggedIn") === "true") {
+        const modal = document.getElementById("successModal");
+        const closeBtn = document.getElementById("closeModal");
+
+        modal.style.display = "flex";
+
+        closeBtn.addEventListener("click", () => {
+          modal.style.display = "none";
+          localStorage.removeItem("loggedIn");
+        });
+      }
+    });
+  </script>
+
+  <div class="hglpj,d">
+
+    <!--=================== تصفح الكورسات ===================-->
+
+    <div class="courses-section">
+
+      <span class="تصفح">تصفح</span>
+      <span class="الكورسات">الكورسات</span>
+      <hr class="rainbow-line">
+      <div class="courses">
+
+        <!-- كورس 1 -->
+        <div class="course">
+          <div class="course-card">
+            <span class="span1">كورس الشهر الأول - عام - 3ث</span>
+            <hr class="الخط---">
+            <p>اول محاضرات - من الباب الاول</p>
+            <button class="button1">الدخول للكورس</button>
+            <button class="button1">الإشتراك في الكورس !</button>
+            <hr class="الخط--">
+            <div class="جنيها">
+              <div class="prise"><span>200.00</span></div>جنيها
+            </div>
+            <P class="الحد">السبت, 5 أكتوبر 2025 <i class="fa-solid fa-arrows-rotate"></i></P>
+            <P class="الحد">الاحد, ٢٧ سبتمبر 2025 <i class="fa-solid fa-folder-plus"></i></P>
+
+
+          </div>
+        </div>
+
+        <!-- كورس 2 -->
+        <div class="course">
+          <div class="course-card">
+            <span class="span1">كورس الشهر الثاني - عام - 3ث</span>
+            <hr class="الخط---">
+            <p>باقي محتوي الشهر الاول</p>
+            <button class="button1">الدخول للكورس</button>
+            <button class="button1">الإشتراك في الكورس !</button>
+            <hr class="الخط--">
+            <div class="جنيها">
+              <div class="prise"><span>200.00</span></div>جنيها
+            </div>
+            <P class="الحد">السبت, 5 أكتوبر 2025 <i class="fa-solid fa-arrows-rotate"></i></P>
+            <P class="الحد">الاحد, ٢٧ سبتمبر 2025 <i class="fa-solid fa-folder-plus"></i></P>
+          </div>
+        </div>
+
+        <!-- كورس 3 -->
+        <div class="course">
+          <div class="course-card">
+            <span class="span1">كورس الشهر الثالث - عام- 3ث</span>
+            <hr class="الخط---">
+            <p>باقي محتوي الشهر الثاني + ورشة الباب الثاني</p>
+            <button class="button1">الدخول للكورس</button>
+            <button class="button1">الإشتراك في الكورس !</button>
+            <hr class="الخط--">
+            <div class="جنيها">
+              <div class="prise"><span>180.00</span></div>جنيها
+            </div>
+            <p class="الحد">السبت, 5 أكتوبر 2025 <i class="fa-solid fa-arrows-rotate"></i></p>
+            <p class="الحد">الاحد, ٢٧ سبتمبر 2025 <i class="fa-solid fa-folder-plus"></i></p>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- الفوتر -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <footer>
+
+    <!-- أيقونات التواصل -->
+    <div class="social-img">
+      <a href="#" class="facebook"></a>
+      <a href="#" class="youtube"></a>
+      <a href="#" class="tiktok"></a>
+      <a href="#" class="instagram"></a>
+      <a href="#" class="telegram"></a>
+      <a href="#" class="whatsapp"></a>
+    </div>
+
+
+
+    <!-- خط فاصل -->
+    <hr class="end--">
+
+
+    <span class="صنع">💙 تم صنع هذه المنصة بهدف تهيئة الطالب لـ كامل جوانب الثانوية العامة و ما بعدها 💙</span>
+
+    <!-- Footer – Support Box -->
+    <div class="support-footer">
+      <h3 class="support-title">الدعم الفني</h3>
+
+      <div class="support-icons">
+        <a href="#" class="icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" class="icon telegram"><i class="fa-brands fa-telegram"></i></a>
+      </div>
+
+      <p class="support-text">تواصل معنا للحصول علي دعم فني</p>
+    </div>
+
+
+    <div class="Developed-By">
+      <span class="Developed">＜Developed By＞</span>
+      <span class="البشمبرمج"><a href="https://web.facebook.com/omar.tegany.801346/" target="_blank">Omar Tegany
+        </a></span>
+      <span class="Developed">＜All Copy Rights Reserved @2025 ＞</span>
+
+
+
+    </div>
+  </footer>
+  </head>
+
+</html>
+</body>
+
+</html>
